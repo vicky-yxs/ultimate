@@ -1,0 +1,14 @@
+{
+	"path" : {
+		"webapp" : "/"
+	},
+	"lib" : {
+		"basic" : [
+			"webapp/public/lib/jquery/jquery.js",
+			"webapp/public/lib/bootstrap/js/bootstrap.js",
+			"webapp/public/lib/underscore/underscore.js",
+			"webapp/public/lib/backbone/backbone.js",
+			"webapp/public/lib/require/require.js"
+		]
+	}
+}

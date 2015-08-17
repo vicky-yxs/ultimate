@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>聊天室</title>
+    <meta content="index/main"  name="widgets" />
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="public/lib/bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" href="public/lib/font-awesome/css/font-awesome.css">
+	<!-- <link rel='stylesheet' href='/stylesheets/style.css' /> -->
+
+	<script type="text/javascript" src="public/js/socket.io.js"></script>
+    <script type="text/javascript" src="public/js/basic.js"></script>
+	<script type="text/javascript" src="public/js/config.js"></script>
+
+	<style>
+		*{padding: 0;margin: 0;}
+		.index{ width: 25%; box-sizing: border-box; height: 500px; margin: auto; position: absolute; left: 0; right: 0; top: 0; bottom: 0;}
+		.panel-title{ overflow: hidden;}
+		.panel-heading h3{ line-height: 34px;}
+		.content{ height: 300px; overflow: auto; border: 1px solid #ccc; padding: 10px; margin-bottom: 20px;}
+		.out{float: right;}
+
+	</style>
+  </head>
+  <body>
+  	<div class="viewport">
+
+  		<div class="userList">
+  			<ul>
+  				<li class="yuanxiaosi"><img src="/public/images/userList2.png">yuanxiaosi</li>
+  				<li class="xiaoliwei"><img src="/public/images/userList2.png">xiaoliwei</li>
+  				<li class="gaojunteng"><img src="/public/images/userList2.png">gaojunteng</li>
+  				<li class="wuqingguang"><img src="/public/images/userList2.png">wuqingguang</li>
+  			</ul>
+  		</div>
+
+    	<div class="index">
+			<div class="panel panel-default">
+
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						welcome! <span class="username"><%= username %></span>
+						<input type="button" class="btn btn-primary out" value="退出">
+					</h3>
+				</div>
+
+				<div class="panel-body">
+
+					<div class="content">
+						<ul>
+							
+							<% for(var i in talkContent){ %>
+								<li>
+									<p>
+										<span><%= talkContent[i].username %> : </span>
+										<%= talkContent[i].content %><br/>
+										(<%= talkContent[i].time %>)
+									</p>
+								</li>
+							<% } %>	
+							
+						</ul>
+					</div>
+
+					<div class="">
+						<div class="form-group col-md-12 input-group">
+							<input type="text" name="message" class="form-control message" /><br/>
+							<input type="button" class="btn btn-primary btn-success send" value="发送" />
+						</div>
+					</div>
+				</div>
+
+				
+			</div>
+    </div>
+
+
+
+
+
+  </body>
+</html>
